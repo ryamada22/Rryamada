@@ -5,7 +5,7 @@
 #' @keywords exact test, Hardy-Weinberg equilibrium
 #' @export
 #' @examples
-#' xx<-hweExact(c(813,182,5))
+#' xx<-ry_hweExact(c(813,182,5))
 #' xx$p.value
 #' sum(xx$prob) # should be 1
 
