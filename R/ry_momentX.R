@@ -4,7 +4,6 @@
 #' @param x is a numeric vector.
 #' @param order is order of moment.
 #' @param center is logical; when TRUE, moment is around mean
-#' and when FALSE, around zero
 #' @keywords complex function, conformal transformation
 #' @export
 #' @examples

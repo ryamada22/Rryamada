@@ -13,8 +13,7 @@ ry_momentProb(x, p, order = 1, center = FALSE)
 
 \item{order}{is order of moment.}
 
-\item{center}{is logical; when TRUE, moment is around mean and
-when FALSE, around zero}
+\item{center}{is logical; when TRUE, moment is around mean and}
 }
 \description{
 This function returns order-th weighted sample moment.
@@ -23,6 +22,7 @@ This function returns order-th weighted sample moment.
 n <- 10
 x <- runif(n)
 p <- runif(n)
+p <- p/sum(p)
 out <- ry_momentProb(x,p,oder=2,center=TRUE)
 }
 \keyword{moment}
