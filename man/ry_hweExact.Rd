@@ -13,7 +13,7 @@ ry_hweExact(g = c(813, 182, 5))
 This function returns Exact HWtest p and probability of all possible counts.
 }
 \examples{
-xx<-hweExact(c(813,182,5))
+xx<-ry_hweExact(c(813,182,5))
 xx$p.value
 sum(xx$prob) # should be 1
 }
