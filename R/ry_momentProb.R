@@ -13,13 +13,11 @@
 #' x <- runif(n)
 #' p <- runif(n)
 #' out <- ry_momentProb(x,p,oder=2,center=TRUE)
-#' mob.fx <- ry_moebius(zs,ws)
-#' print(mob.fx(zs))
-#' print(ws)
+
 ry_momentProb<-function (x, p,order = 1, center = FALSE) 
 {
  if(center)
-  x <- x - momentProb(x,p,order=1,center=FALSE)
+  x <- x - ry_momentProb(x,p,order=1,center=FALSE)
  sum(x^order*p)
 }
 
