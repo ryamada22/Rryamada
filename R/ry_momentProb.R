@@ -4,7 +4,7 @@
 #' @param x is a numeric vector.
 #' @param p is a numeric vector of weight of x elements
 #' @param order is order of moment.
-#' @param center is logical; when TRUE, moment is around mean and
+#' @param center is logical; when TRUE, moment is around mean and otherwise zero.
 #' @keywords moment
 #' @export
 #' @examples
