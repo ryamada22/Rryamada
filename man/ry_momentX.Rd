@@ -11,7 +11,7 @@ ry_momentX(x, order = 1, center = FALSE)
 
 \item{order}{is order of moment.}
 
-\item{center}{is logical; when TRUE, moment is around mean}
+\item{center}{is logical; when TRUE, moment is around mean otherwise zero}
 }
 \description{
 This function returns order-th sample moment.

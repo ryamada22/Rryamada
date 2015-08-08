@@ -13,7 +13,7 @@ ry_momentProb(x, p, order = 1, center = FALSE)
 
 \item{order}{is order of moment.}
 
-\item{center}{is logical; when TRUE, moment is around mean and}
+\item{center}{is logical; when TRUE, moment is around mean and otherwise zero.}
 }
 \description{
 This function returns order-th weighted sample moment.
