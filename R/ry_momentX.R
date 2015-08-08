@@ -15,5 +15,5 @@
 
 ry_momentX<-function (x, order = 1, center = FALSE) 
 {
- momentProb(x,p=rep(1,length(x))/length(x),order=order,center=center) 
+ ry_momentProb(x,p=rep(1,length(x))/length(x),order=order,center=center) 
 }
