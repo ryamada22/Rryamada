@@ -24,9 +24,6 @@ n <- 10
 x <- runif(n)
 p <- runif(n)
 out <- ry_momentProb(x,p,oder=2,center=TRUE)
-mob.fx <- ry_moebius(zs,ws)
-print(mob.fx(zs))
-print(ws)
 }
 \keyword{moment}
 
