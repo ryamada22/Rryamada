@@ -7,6 +7,6 @@
 #' hundredR()
 
 hundredR <- function(){
-  result <- .C("hundred",x=100.0)
+  result <- .C("hundred",package="Rryamada",x=100.0)
 	return(result$x)
 }
