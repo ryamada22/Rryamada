@@ -8,8 +8,7 @@
 #' @keywords Schwarz-Crhistoffel
 #' @export
 #' @examples
-#' out <- my_schwarzChristoffel(0.2,30)
-#' plot(out)
+#' out <- my_complex_color(3+1i*2)
 
 my_complex_color <- function(z,int0=0.6,sat0=0.3,int1=1,sat1=1){
 my.hsv <- function(z,int0=0.6,sat0=0.3,int1=1,sat1=1){
