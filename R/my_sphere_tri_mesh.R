@@ -5,9 +5,10 @@
 #' @keywords triangulation mesh sphere
 #' @export
 #' @examples
-#' out <- my_sphere_tri_mesh(n.psi=30)
+#' sp.mesh <- my_sphere_tri_mesh(n.psi=30)
 #' library(rgl)
-#' plot3d(out)
+#' plot3d(sp.mesh$xyz)
+#' segments3d(sp.mesh$xyz[c(t(sp.mesh$edge)),])
 
 my_sphere_tri_mesh <- function(n.psi=30){
   thetas <- list()

@@ -13,9 +13,10 @@ my_sphere_tri_mesh(n.psi = 30)
 This function gives 3D coordinates of triangular mesh on sphere..
 }
 \examples{
-out <- my_sphere_tri_mesh(n.psi=30)
+sp.mesh <- my_sphere_tri_mesh(n.psi=30)
 library(rgl)
-plot3d(out)
+plot3d(sp.mesh$xyz)
+segments3d(sp.mesh$xyz[c(t(sp.mesh$edge)),])
 }
 \keyword{mesh}
 \keyword{sphere}
