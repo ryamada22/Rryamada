@@ -2,6 +2,7 @@
 
 export(my_complex_color)
 export(my_schwarzChristoffel)
+export(my_sphere_tri_mesh)
 export(ry_hweExact)
 export(ry_moebius)
 export(ry_momentProb)
