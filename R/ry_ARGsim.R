@@ -12,11 +12,11 @@
 #' g<-10
 #' l<-200
 #' r<-0.05
-#' d<-ARGsim(n=n,g=g,l=l,r=r)
+#' d<-ry_ARGsim(n=n,g=g,l=l,r=r)
 #' mmm<-matrix(d$parents[1,],ncol=g)
 
 
-ARGsim<-function(n=8,g=5,l=6,r=r){
+ry_ARGsim<-function(n=8,g=5,l=6,r=r){
  ids<-1:n
  now<-1:n
  parents<-rep(0,n*g*l)
