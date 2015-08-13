@@ -1,5 +1,5 @@
-#' @importFrom igraph *
-#' @importFrom rgl *
+#' @import igraph
+#' @import rgl
 #' Dummy title
 #'
 #' Dummy description.
