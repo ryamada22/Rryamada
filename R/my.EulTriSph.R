@@ -2,6 +2,7 @@
 #'
 #' Dummy description.
 #' @examples
+#' library(igraph)
 #' n.step <- 20
 #' euler.out <- my.EulTriSph(n.step)
 #' el <- my.dir.graph(euler.out[[1]],euler.out[[2]])
@@ -15,7 +16,6 @@
 #' nrow(euler.out[[1]])
 #' sh.dist <- shortest.paths(graph.edgelist(euler.tree.out[[2]]),root.e[1],mode="out")
 #' plot(graph.edgelist(euler.tree.out[[1]]),vertex.label=sh.dist)
-#' @import rgl
 #' @import igraph
 #' @export
 my.EulTriSph <- function(n.step){

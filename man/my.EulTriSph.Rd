@@ -10,6 +10,7 @@ my.EulTriSph(n.step)
 Dummy description.
 }
 \examples{
+library(igraph)
 n.step <- 20
 euler.out <- my.EulTriSph(n.step)
 el <- my.dir.graph(euler.out[[1]],euler.out[[2]])
