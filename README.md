@@ -1,2 +1,0 @@
-# Rryamada
-# Rryamada
