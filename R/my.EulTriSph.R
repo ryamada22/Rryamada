@@ -1,5 +1,3 @@
-#' @import igraph
-#' @import rgl
 #' Dummy title
 #'
 #' Dummy description.
@@ -17,7 +15,8 @@
 #' nrow(euler.out[[1]])
 #' sh.dist <- shortest.paths(graph.edgelist(euler.tree.out[[2]]),root.e[1],mode="out")
 #' plot(graph.edgelist(euler.tree.out[[1]]),vertex.label=sh.dist)
-
+#' @import rgl
+#' @import igraph
 #' @export
 my.EulTriSph <- function(n.step){
   # エッジリスト

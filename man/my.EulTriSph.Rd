@@ -2,8 +2,12 @@
 % Please edit documentation in R/my.EulTriSph.R
 \name{my.EulTriSph}
 \alias{my.EulTriSph}
+\title{Dummy title}
 \usage{
 my.EulTriSph(n.step)
+}
+\description{
+Dummy description.
 }
 \examples{
 n.step <- 20
