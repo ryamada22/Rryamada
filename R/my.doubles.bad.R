@@ -9,6 +9,7 @@
 #' K <- sample(1:2,42,replace=TRUE,prob=c(0.49,0.51))
 #' K <- c(1,1,1,1,1,1,2,1,2,1,2,1,1,2,1,2,2,1,1,2,2,1,1,1,2,1,2,1,1,2,1,1)
 #' K <- K * (-1) + 3
+#' # The score sheet for this match : http://www.badminton.or.jp/nba/shinpan/scoresheet.pdf 
 #' doubles.score <- my.doubles.bad(K)
 #' # ポイントチーム記録
 #' doubles.score$Point.team
