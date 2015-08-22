@@ -2,12 +2,12 @@
 % Please edit documentation in R/my.EulTriSph.R
 \name{my.EulTriSph}
 \alias{my.EulTriSph}
-\title{Dummy title}
+\title{Euler Triangulation on Sphere}
 \usage{
 my.EulTriSph(n.step)
 }
 \description{
-Dummy description.
+A set of functions to randomly generate euler triangulation on Sphere.
 }
 \examples{
 library(igraph)

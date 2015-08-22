@@ -1,6 +1,6 @@
-#' Dummy title
+#' Euler Triangulation on Sphere
 #'
-#' Dummy description.
+#' A set of functions to randomly generate euler triangulation on Sphere.
 #' @examples
 #' library(igraph)
 #' n.step <- 20
