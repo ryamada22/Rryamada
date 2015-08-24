@@ -10,16 +10,43 @@
 #' my.Cochran.Armitage.trend.exact.2x3(m)
 #' my.trend.exact.2x3(m)
 
-
 my.Cochran.Armitage.trend.exact.2x3 <- function(m){
-	# 全テーブル列挙
 	out1 <- my.all.2x3(m)
 	# marginal counts
 	sum.col <- c(m[1]+m[4],m[2]+m[5],m[3]+m[6])
 	sum.row <- c(sum(m[1:3]),sum(m[4:6]))
 	sum.all <- sum(m)
 
-	# 全テーブル生起確率
+	tmp1 <-sum(lgamma(sum.col+1))+sum(lgamma(sum.row+1))-lgamma(sum.all+1)
+	tmp2 <- apply(lgamma(out1+1),1,sum)
+	tmp3 <- tmp1 - tmp2
+	
+	# Cochran-Armitage
+	# http://aoki2.si.gunma-u.ac.jp/R/Cochran-Armitage.html 
+	# http://d.hatena.ne.jp/ryamada22/20070601 
+	r <- out1[,1:3]
+	rr <- out1[,1]*2 + out1[,2]
+	rr.range <- range(rr)
+	rr.seq <- seq(from=rr.range[1],to=rr.range[2],by=1)
+	tmp.pr <- rep(0,length(rr.seq))
+	for(i in 1:length(tmp.pr)){
+		selec <- which(rr==rr.range[1]+i-1)
+		tmp.pr[i] <- sum(exp(tmp3[selec]))
+	}
+	ori.selec <- which(rr.seq==m[1]*2+m[2])
+	#ori.pr <- sum(exp(tmp3[ori.selec]))
+	ori.pr <- tmp.pr[ori.selec]
+	sum(tmp.pr[which(tmp.pr<=ori.pr)])
+}
+
+#' @export
+my.Cochran.Armitage.trend.exact.2x3.ori <- function(m){
+	out1 <- my.all.2x3(m)
+	# marginal counts
+	sum.col <- c(m[1]+m[4],m[2]+m[5],m[3]+m[6])
+	sum.row <- c(sum(m[1:3]),sum(m[4:6]))
+	sum.all <- sum(m)
+
 	tmp1 <-sum(lgamma(sum.col+1))+sum(lgamma(sum.row+1))-lgamma(sum.all+1)
 	tmp2 <- apply(lgamma(out1+1),1,sum)
 	tmp3 <- tmp1 - tmp2
@@ -42,7 +69,6 @@ my.Cochran.Armitage.trend.exact.2x3 <- function(m){
 	dn.ori <- R*S*(N*(n.ori[2]+4*n.ori[3])-(n.ori[2]+2*n.ori[3])^2)
 	original.chisq <- up.ori/dn.ori
 	selected <- which(abs(out3)>=abs(original.chisq))
-	# 正確確率の足し合わせ
 	sum(exp(tmp3[selected]))
 }
 
@@ -101,25 +127,18 @@ my.Cochran.Armitage.Trend.test <- function(m){
 #' @export
 
 my.trend.exact.2x3 <- function(m){
-	# 全テーブル列挙
 	out1 <- my.all.2x3(m)
 	# marginal counts
 	sum.col <- c(m[1]+m[4],m[2]+m[5],m[3]+m[6])
 	sum.row <- c(sum(m[1:3]),sum(m[4:6]))
 	sum.all <- sum(m)
 
-	# 全テーブル生起確率
 	tmp1 <-sum(lgamma(sum.col+1))+sum(lgamma(sum.row+1))-lgamma(sum.all+1)
 	tmp2 <- apply(lgamma(out1+1),1,sum)
 	tmp3 <- tmp1 - tmp2
 	
-	# トレンドモデルでのエフェクトサイズ(線形回帰係数)
 	out3 <- apply(out1,1,my.prop.trend.test)
-	# オリジナルテーブルの線形回帰係数
 	original.chisq <- my.prop.trend.test(m)
-	# オリジナルテーブルの線形回帰係数以上のテーブルのリスト
-	# 絶対値をとっているのは「両側検定」
 	selected <- which(abs(out3)>=abs(original.chisq))
-	# 正確確率の足し合わせ
 	sum(exp(tmp3[selected]))
 }
